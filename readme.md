@@ -2,7 +2,7 @@
 
 Esta es una aplicación web de gestión de tareas desarrollada con Flask que incluye autenticación de usuarios. Los usuarios pueden crear, ver, actualizar y eliminar tareas después de autenticarse en la aplicación.
 
-Si quieres ejecutar el sitio en tu entorno puedes seguir leyendo :)
+Si quieres ejecutar el sitio en tu entorno para mejorar la aplicación o practicar por tu cuenta puedes seguir leyendo :)
 
 ## Requisitos
 
