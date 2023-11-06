@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1 class="title">{% block title %}Lista de Tareas{% endblock %}</h1>
+
+ {% endblock %} 
+{% block content %}
+<ul>
+  {% for tarea in tareas %}
+  <li></li>
+    <div class="todo">
+        <h1>
+            {% if tarea[3] == 1 %}
+            <strike>{{ tarea[1] }}</strike>
+            {% else %}
+            {{ tarea[1] }}
+            {% endif %}
+        </h1>
+        <div class="about"><span>Creado: </span>{{ tarea[4].strftime('%Y-%m-%d a las %H:%M')}}</div>
+
+        <a class="actualizar" href="{{ url_for('todo.actualizar', id=tarea[0]) }}"><i class="material-icons">edit</i></a>
+        <a class="eliminar" href="{{ url_for('todo.eliminar', id=tarea[0]) }}" ><i class="material-icons">delete</i></a>
+    </div>
+  {% if not loop.last %}
+    <hr>
+  {% endif %}
+  {% endfor %} 
+         {% if g.user %}
+         <a class="new" href="{{ url_for('todo.crear') }}"><i class="material-icons">add</i></a>
+        {% endif %}
+</ul>
+{% block modal %}
+
+{% endblock %}
+
+{% endblock %}
+
+{% block script %}
+  {% endblock %}
